@@ -1,6 +1,9 @@
 import "./App.css";
+import Counter from "./Counter";
+import { useState } from "react";
 
 function App() {
+  const [count, setCount]= useState(1);
   return (
     <div className="App">
       <section class="hero">
@@ -13,6 +16,8 @@ function App() {
         <div class="notification">
           Edit the <code>./src</code> folder to add components.
         </div>
+        <Counter count={count}/>
+        <button onClick={()=>setCount(count+1)}>Count ({count})</button>
       </div>
     </div>
   );
